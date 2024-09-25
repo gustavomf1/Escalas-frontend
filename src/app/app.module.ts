@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { NavComponent } from './components/nav/nav.component';
+import { AppRoutingModule } from './app-routing-module';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { NavComponent } from './components/nav/nav.component';
     FormsModule,
     ReactiveFormsModule, // Certifique-se de incluir ReactiveFormsModule se necessário
     HttpClientModule, MatFormFieldModule, MatPaginatorModule, MatSnackBarModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatSelectModule, 
-    MatTableModule, MatRadioModule, MatInputModule, MatIconModule, MatListModule, MatCardModule
+    MatTableModule, MatRadioModule, MatInputModule, MatIconModule, MatListModule, MatCardModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
