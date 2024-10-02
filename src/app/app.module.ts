@@ -24,6 +24,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { AppRoutingModule } from './app-routing-module';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { PessoaListComponent } from './components/pessoa/pessoa-list/pessoa-list.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { HeaderComponent } from './components/header/header.component';
     AppComponent,
     NavComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    PessoaListComponent
   ],
   imports: [
     BrowserModule, 
