@@ -2,11 +2,13 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { NavComponent } from "./components/nav/nav.component";
 import { HomeComponent } from "./components/home/home.component";
+import { PessoaListComponent } from "./components/pessoa/pessoa-list/pessoa-list.component";
 
 const routes: Routes = [
     {
         path: '', component: NavComponent, children: [
-            {path: 'home', component: HomeComponent}
+            {path: 'home', component: HomeComponent},
+            {path: 'pessoas', component: PessoaListComponent}
         ]
     }
 ];
