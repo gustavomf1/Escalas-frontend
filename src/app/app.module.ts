@@ -25,6 +25,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PessoaListComponent } from './components/pessoa/pessoa-list/pessoa-list.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { PessoaListComponent } from './components/pessoa/pessoa-list/pessoa-list
     NavComponent,
     HomeComponent,
     HeaderComponent,
-    PessoaListComponent
+    PessoaListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule, 
