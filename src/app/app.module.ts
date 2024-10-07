@@ -28,6 +28,7 @@ import { PessoaListComponent } from './components/pessoa/pessoa-list/pessoa-list
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { PessoaCreateComponent } from './components/pessoa/pessoa-create/pessoa-create.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     HomeComponent,
     HeaderComponent,
     PessoaListComponent,
-    LoginComponent
+    LoginComponent,
+    PessoaCreateComponent
   ],
   imports: [
     BrowserModule, 
