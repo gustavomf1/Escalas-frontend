@@ -2,44 +2,43 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Pessoa } from 'src/app/models/pessoa';
+import { PessoaService } from 'src/app/services/pessoa.service';
 
 @Component({
   selector: 'app-pessoa-list',
   templateUrl: './pessoa-list.component.html',
   styleUrls: ['./pessoa-list.component.css']
 })
-export class PessoaListComponent implements OnInit, AfterViewInit {
+export class PessoaListComponent implements OnInit{
 
-  // Propriedade da classe, sem 'const'
-  ELEMENT_DATA: Pessoa[] = [
-    {
-      id: 1,
-      nome: 'Gustavo Martins',
-      cpf: '123.456.789-10',
-      email: 'gustavo@gmail.com',
-      senha: '1234',
-      perfis: ['0'],
-      dataCriacao: '20/10/2024'
-    }
-  ];
+  ELEMENT_DATA: Pessoa[] = [];
 
-  // Colunas exibidas na tabela
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'acoes'];
-  
-  // DataSource da tabela com os dados
-  dataSource = new MatTableDataSource<Pessoa>(this.ELEMENT_DATA);
+  dataSource = new MatTableDataSource<Pessoa>([]);
 
-  // ViewChild para pegar o paginator
+  displayedColumns: string[] = ['id', 'nome', 'cpf', 'email', 'acoes'];
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor() { }
+  constructor(
+    private service: PessoaService
+  ) { }
 
   ngOnInit(): void {
+    this.findAll();
   }
 
-  // Configurando o paginator após a inicialização da view
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+  findAll() {
+    this.service.findAll().subscribe(resposta => {
+      this.ELEMENT_DATA = resposta;
+      this.dataSource = new MatTableDataSource<Pessoa>(resposta);
+      this.dataSource.paginator = this.paginator;
+    })
   }
 
-}
+    applyFilter(event: Event) {
+      const filterValue = (event.target as HTMLInputElement).value;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+    }
+  }
+
+
