@@ -14,4 +14,8 @@ export class PessoaService {
   findAll(): Observable<Pessoa[]>{
     return this.http.get<Pessoa[]>(`${API_CONFIG.baseUrl}/pessoas`)
   }
+
+  create(pessoa: Pessoa): Observable<Pessoa> {
+    return this.http.post<Pessoa>(`${API_CONFIG.baseUrl}/pessoas`, pessoa);
+  }
 }
