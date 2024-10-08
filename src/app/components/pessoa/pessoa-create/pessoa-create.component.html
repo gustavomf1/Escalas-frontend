@@ -4,15 +4,16 @@
         <img class="fullwidth" src="assets/img/tecnico-create.svg" alt="">
 
         <section class="section">
-            <mat-checkbox class="margin">Admin</mat-checkbox>
-            <mat-checkbox class="margin">Lider</mat-checkbox>
-            <mat-checkbox class="margin">Funcionario</mat-checkbox>
+            <mat-checkbox class="margin" color="primary">Admin</mat-checkbox>
+            <mat-checkbox class="margin" color="primary">Lider</mat-checkbox>
+            <mat-checkbox class="margin" color="primary">Funcionario</mat-checkbox>
         </section>
 
         <p>
             <mat-form-field class="fullwidth" appearance="fill">
               <mat-label>Nome</mat-label>
-              <input matInput placeholder="Ex. Roberto Silva">
+              <input [formControl]="nome" required matInput placeholder="Ex. Roberto Silva"
+              maxlength="50">
               <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
           </p>
@@ -20,7 +21,8 @@
           <p>
             <mat-form-field class="fullwidth" appearance="fill">
               <mat-label>CPF</mat-label>
-              <input matInput placeholder="Ex. 000.000.000-00">
+              <input [formControl]="cpf" required matInput placeholder="Ex. 000.000.000-00"
+              mask="000.000.000-00">
               <mat-icon matSuffix>pin</mat-icon>
             </mat-form-field>
           </p>
@@ -28,7 +30,7 @@
           <p>
             <mat-form-field class="fullwidth" appearance="fill">
               <mat-label>E-mail</mat-label>
-              <input matInput placeholder="Ex. roberto@gmail.com">
+              <input [formControl]="email" required matInput placeholder="Ex. roberto@gmail.com">
               <mat-icon matSuffix>mail</mat-icon>
             </mat-form-field>
           </p>
@@ -36,12 +38,12 @@
           <p>
             <mat-form-field class="fullwidth" appearance="fill">
               <mat-label>Senha</mat-label>
-              <input type="password" matInput placeholder="Ex. 1234">
+              <input [formControl]="senha" required type="password" matInput placeholder="Ex. 1234">
               <mat-icon matSuffix>password</mat-icon>
             </mat-form-field>
           </p>
 
-          <button class="fullwidth mat-elevation-z8" mat-flat-button color="primary">Cadastrar</button>
-          <button class="fullwidth mat-elevation-z8" mat-stroked-button color="primary">Cancelar</button>
+          <button [disabled]="!validaCampos()" class="fullwidth mat-elevation-z8" mat-flat-button color="primary">Cadastrar</button>
+          <button routerLink="../" class="fullwidth mat-elevation-z8" mat-stroked-button color="primary">Cancelar</button>
     </form>
 </div>
