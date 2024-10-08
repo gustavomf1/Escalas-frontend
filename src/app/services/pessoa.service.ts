@@ -27,4 +27,8 @@ export class PessoaService {
   update(pessoa: Pessoa): Observable<Pessoa>{
     return this.http.put<Pessoa>(`${API_CONFIG.baseUrl}/pessoas/${pessoa.id}`, pessoa);
   }
+
+  delete(id: any): Observable<Pessoa>{
+    return this.http.delete<Pessoa>(`${API_CONFIG.baseUrl}/pessoas/${id}`);
+  }
 }
