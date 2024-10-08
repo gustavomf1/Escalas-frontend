@@ -6,6 +6,8 @@ import { PessoaListComponent } from "./components/pessoa/pessoa-list/pessoa-list
 import { LoginComponent } from "./components/login/login.component";
 import { AuthGuard } from "./auth/auth.guard";
 import { PessoaCreateComponent } from "./components/pessoa/pessoa-create/pessoa-create.component";
+import { PessoaUpdateComponent } from "./components/pessoa/pessoa-update/pessoa-update.component";
+import { PessoaDeleteComponent } from "./components/pessoa/pessoa-delete/pessoa-delete.component";
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent},
@@ -14,7 +16,9 @@ const routes: Routes = [
             {path: 'home', component: HomeComponent},
 
             {path: 'pessoas', component: PessoaListComponent},
-            {path: 'pessoas/create', component: PessoaCreateComponent}
+            {path: 'pessoas/create', component: PessoaCreateComponent},
+            {path: 'pessoas/update/:id', component: PessoaUpdateComponent},
+            {path: 'pessoas/delete/:id', component: PessoaDeleteComponent}
         ]
     }
 ];

@@ -30,6 +30,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { PessoaCreateComponent } from './components/pessoa/pessoa-create/pessoa-create.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { PessoaUpdateComponent } from './components/pessoa/pessoa-update/pessoa-update.component';
+import { PessoaDeleteComponent } from './components/pessoa/pessoa-delete/pessoa-delete.component';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { NgxMaskModule } from 'ngx-mask';
     HeaderComponent,
     PessoaListComponent,
     LoginComponent,
-    PessoaCreateComponent
+    PessoaCreateComponent,
+    PessoaUpdateComponent,
+    PessoaDeleteComponent
   ],
   imports: [
     BrowserModule, 
