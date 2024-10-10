@@ -1,0 +1,48 @@
+<div class="container mat-elevation-z8">
+    <h1 class="full-width">Criando a Escala</h1>
+    <img class="full-width" src="assets/img/chamado-create.svg" alt="image">
+
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Titulo</mat-label>
+            <input matInput placeholder="Ex. Transporte">
+        </mat-form-field>
+    </form>
+
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Data</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="data" placeholder="dd/MM/yyyy">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="escalaForm.get('data').invalid && (escalaForm.get('data').dirty || escalaForm.get('data').touched)">
+            A data é obrigatória.
+        </mat-error>
+    </mat-form-field>
+
+    <div class="selecao">
+            <mat-form-field appearance="outline">
+                <mat-label>Selecione uma equipe</mat-label>
+                <mat-select>
+                    <mat-option value="0">Valdir</mat-option>
+                </mat-select>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Pessoas Extras</mat-label>
+                <mat-select>
+                    <mat-option value="0">Valdir</mat-option>
+                </mat-select>
+            </mat-form-field>
+    </div>
+    
+
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline" >
+          <mat-label>Descrição</mat-label>
+          <textarea class="descricao" matInput placeholder="Ex. Entregar preso na unidade..."></textarea>
+        </mat-form-field>
+      </form>
+
+      <button class="full-width mat-elevation-z8" mat-raised-button color="primary">Criar</button>
+      <button class="full-width mat-elevation-z8" mat-stroked-button color="primary">Cancelar</button>
+</div>

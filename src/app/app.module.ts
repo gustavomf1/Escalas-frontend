@@ -5,11 +5,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'; // Correção: importando o módulo corretamente
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSnackBarModule }from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -37,7 +37,12 @@ import { EquipeCreateComponent } from './components/equipe/equipe-create/equipe-
 import { EquipeUpdateComponent } from './components/equipe/equipe-update/equipe-update.component';
 import { EquipeDeleteComponent } from './components/equipe/equipe-delete/equipe-delete.component';
 import { EscalaListComponent } from './components/escala/escala-list/escala-list.component';
-
+import { EscalaCreateComponent } from './components/escala/escala-create/escala-create.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { registerLocaleData } from '@angular/common'; // Importando para registrar a locale
+import localePt from '@angular/common/locales/pt'; // Importando locale pt-BR
+import { LOCALE_ID } from '@angular/core'; // Importando LOCALE_ID para configuração
 
 @NgModule({
   declarations: [
@@ -54,17 +59,32 @@ import { EscalaListComponent } from './components/escala/escala-list/escala-list
     EquipeCreateComponent,
     EquipeUpdateComponent,
     EquipeDeleteComponent,
-    EscalaListComponent
+    EscalaListComponent,
+    EscalaCreateComponent
   ],
   imports: [
-    BrowserModule, 
-    MatButtonModule, 
-    BrowserAnimationsModule, 
+    BrowserModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule, // Certifique-se de incluir ReactiveFormsModule se necessário
-    HttpClientModule, MatFormFieldModule, MatPaginatorModule, MatSnackBarModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatSelectModule, 
-    MatTableModule, MatRadioModule, MatInputModule, MatIconModule, MatListModule, MatCardModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
+    MatSnackBarModule,
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatSelectModule,
+    MatTableModule,
+    MatRadioModule,
+    MatInputModule,
+    MatIconModule,
+    MatListModule,
+    MatCardModule,
     AppRoutingModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       closeButton: true,
@@ -72,7 +92,14 @@ import { EscalaListComponent } from './components/escala/escala-list/escala-list
     }),
     NgxMaskModule.forRoot()
   ],
-  providers: [AuthInterceptorProvider],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR' }, // Configurando a locale para pt-BR
+    AuthInterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    registerLocaleData(localePt); // Registrando a locale
+  }
+}
