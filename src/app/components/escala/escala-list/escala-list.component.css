@@ -1,0 +1,84 @@
+.container {
+    width: 80%; /* Reduzi para 80% para centralizar e alinhar melhor */
+    margin: 0 auto;
+    padding: 2rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0 10px; /* Adiciona espaçamento entre as linhas */
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 1.5rem; /* Espaçamento entre o campo de filtro e a tabela */
+}
+
+button {
+    width: 100%;
+    margin-bottom: 1rem; /* Espaçamento entre os botões e outros elementos */
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.edit, .delete {
+    cursor: pointer;
+    padding: 4px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.edit:hover {
+    color: #1976d2; /* Mudança de cor no hover */
+}
+
+.delete:hover {
+    color: #d32f2f; /* Mudança de cor no hover */
+}
+
+.mat-elevation-z8 {
+    border-radius: 8px;
+}
+
+.mat-header-cell {
+    font-weight: bold;
+    padding: 10px 16px;
+    text-align: center; /* Centraliza o texto no cabeçalho */
+}
+
+.mat-cell {
+    padding: 10px 16px;
+    text-align: center; /* Centraliza o texto nas células */
+}
+
+.mat-paginator {
+    margin-top: 20px; /* Espaçamento entre a tabela e o paginador */
+}
+
+.mat-table {
+    border-collapse: collapse;
+}
+
+.mat-row {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12); /* Adiciona linha divisória entre as células */
+}
+
+.mat-row:hover {
+    background-color: rgba(0, 0, 0, 0.04); /* Efeito hover nas linhas */
+}
+
+.edit{
+    color: black;
+}
+
+.visibility{
+    color: #790912;
+}

@@ -12,6 +12,7 @@ import { EquipeListComponent } from "./components/equipe/equipe-list/equipe-list
 import { EquipeCreateComponent } from "./components/equipe/equipe-create/equipe-create.component";
 import { EquipeUpdateComponent } from "./components/equipe/equipe-update/equipe-update.component";
 import { EquipeDeleteComponent } from "./components/equipe/equipe-delete/equipe-delete.component";
+import { EscalaListComponent } from "./components/escala/escala-list/escala-list.component";
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent},
@@ -28,6 +29,8 @@ const routes: Routes = [
             {path: 'equipes/create', component: EquipeCreateComponent},
             {path: 'equipes/update/:id', component: EquipeUpdateComponent},
             {path: 'equipes/delete/:id', component: EquipeDeleteComponent},
+
+            {path: 'escalas', component: EscalaListComponent}
         ]
     }
 ];
