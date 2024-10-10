@@ -32,6 +32,10 @@ import { PessoaCreateComponent } from './components/pessoa/pessoa-create/pessoa-
 import { NgxMaskModule } from 'ngx-mask';
 import { PessoaUpdateComponent } from './components/pessoa/pessoa-update/pessoa-update.component';
 import { PessoaDeleteComponent } from './components/pessoa/pessoa-delete/pessoa-delete.component';
+import { EquipeListComponent } from './components/equipe/equipe-list/equipe-list.component';
+import { EquipeCreateComponent } from './components/equipe/equipe-create/equipe-create.component';
+import { EquipeUpdateComponent } from './components/equipe/equipe-update/equipe-update.component';
+import { EquipeDeleteComponent } from './components/equipe/equipe-delete/equipe-delete.component';
 
 
 @NgModule({
@@ -44,7 +48,11 @@ import { PessoaDeleteComponent } from './components/pessoa/pessoa-delete/pessoa-
     LoginComponent,
     PessoaCreateComponent,
     PessoaUpdateComponent,
-    PessoaDeleteComponent
+    PessoaDeleteComponent,
+    EquipeListComponent,
+    EquipeCreateComponent,
+    EquipeUpdateComponent,
+    EquipeDeleteComponent
   ],
   imports: [
     BrowserModule, 

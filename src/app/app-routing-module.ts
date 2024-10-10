@@ -8,6 +8,10 @@ import { AuthGuard } from "./auth/auth.guard";
 import { PessoaCreateComponent } from "./components/pessoa/pessoa-create/pessoa-create.component";
 import { PessoaUpdateComponent } from "./components/pessoa/pessoa-update/pessoa-update.component";
 import { PessoaDeleteComponent } from "./components/pessoa/pessoa-delete/pessoa-delete.component";
+import { EquipeListComponent } from "./components/equipe/equipe-list/equipe-list.component";
+import { EquipeCreateComponent } from "./components/equipe/equipe-create/equipe-create.component";
+import { EquipeUpdateComponent } from "./components/equipe/equipe-update/equipe-update.component";
+import { EquipeDeleteComponent } from "./components/equipe/equipe-delete/equipe-delete.component";
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent},
@@ -18,7 +22,12 @@ const routes: Routes = [
             {path: 'pessoas', component: PessoaListComponent},
             {path: 'pessoas/create', component: PessoaCreateComponent},
             {path: 'pessoas/update/:id', component: PessoaUpdateComponent},
-            {path: 'pessoas/delete/:id', component: PessoaDeleteComponent}
+            {path: 'pessoas/delete/:id', component: PessoaDeleteComponent},
+
+            {path: 'equipes', component: EquipeListComponent},
+            {path: 'equipes/create', component: EquipeCreateComponent},
+            {path: 'equipes/update/:id', component: EquipeUpdateComponent},
+            {path: 'equipes/delete/:id', component: EquipeDeleteComponent},
         ]
     }
 ];

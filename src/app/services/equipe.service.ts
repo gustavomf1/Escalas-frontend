@@ -11,7 +11,23 @@ export class EquipeService {
 
   constructor(private http: HttpClient) { }
   
-  getEquipeById(id: number): Observable<Equipe> {
+  getEquipeById(id: any): Observable<Equipe> {
     return this.http.get<Equipe>(`${API_CONFIG.baseUrl}/equipes/${id}`);
-}
+  }
+
+  findAll(): Observable<Equipe[]>{
+    return this.http.get<Equipe[]>(`${API_CONFIG.baseUrl}/equipes`)
+  }
+
+  create(equipe: Equipe): Observable<Equipe> {
+    return this.http.post<Equipe>(`${API_CONFIG.baseUrl}/equipes`, equipe);
+  }
+
+  update(equipe: Equipe): Observable<Equipe>{
+    return this.http.put<Equipe>(`${API_CONFIG.baseUrl}/equipes/${equipe.id}`, equipe);
+  }
+
+  delete(id: any): Observable<Equipe>{
+    return this.http.delete<Equipe>(`${API_CONFIG.baseUrl}/equipes/${id}`);
+  }
 }

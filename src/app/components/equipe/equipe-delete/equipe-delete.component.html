@@ -1,0 +1,18 @@
+<div class="container mat-elevation-z8">
+    <form class="form">
+      <h1 class="fullwidth">Cadastrar Equipe</h1>
+      <img class="fullwidth" src="assets/img/team-building.png" alt="">
+  
+      <p>
+        <mat-form-field class="fullwidth" appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input [(ngModel)]="equipe.nome" name="nome" matInput [disabled]="true">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </p>
+  
+      <button (click)="delete()" class="fullwidth mat-elevation-z8" mat-flat-button
+        color="primary">Deletar</button>
+      <button routerLink="../../" class="fullwidth mat-elevation-z8" mat-stroked-button color="primary">Cancelar</button>
+    </form>
+  </div>
