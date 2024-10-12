@@ -14,4 +14,8 @@ export class EscalasService {
   findAll(): Observable<Escala[]> {
     return this.http.get<Escala[]>(`${API_CONFIG.baseUrl}/escalas`);
   }
+
+  create(escala: Escala): Observable<Escala>{
+    return this.http.post<Escala>(`${API_CONFIG.baseUrl}/escalas`, escala);
+  }
 }
