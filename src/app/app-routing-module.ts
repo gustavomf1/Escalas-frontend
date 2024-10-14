@@ -14,6 +14,7 @@ import { EquipeUpdateComponent } from "./components/equipe/equipe-update/equipe-
 import { EquipeDeleteComponent } from "./components/equipe/equipe-delete/equipe-delete.component";
 import { EscalaListComponent } from "./components/escala/escala-list/escala-list.component";
 import { EscalaCreateComponent } from "./components/escala/escala-create/escala-create.component";
+import { EscalaUpdateComponent } from "./components/escala/escala-update/escala-update.component";
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent},
@@ -32,7 +33,8 @@ const routes: Routes = [
             {path: 'equipes/delete/:id', component: EquipeDeleteComponent},
 
             {path: 'escalas', component: EscalaListComponent},
-            {path: 'escalas/create', component: EscalaCreateComponent}
+            {path: 'escalas/create', component: EscalaCreateComponent},
+            {path: 'escalas/update/:id', component: EscalaUpdateComponent}
         ]
     }
 ];

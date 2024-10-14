@@ -42,7 +42,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common'; // Importando para registrar a locale
 import localePt from '@angular/common/locales/pt'; // Importando locale pt-BR
-import { LOCALE_ID } from '@angular/core'; // Importando LOCALE_ID para configuração
+import { LOCALE_ID } from '@angular/core';
+import { EscalaUpdateComponent } from './components/escala/escala-update/escala-update.component'; // Importando LOCALE_ID para configuração
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { LOCALE_ID } from '@angular/core'; // Importando LOCALE_ID para configur
     EquipeUpdateComponent,
     EquipeDeleteComponent,
     EscalaListComponent,
-    EscalaCreateComponent
+    EscalaCreateComponent,
+    EscalaUpdateComponent
   ],
   imports: [
     BrowserModule,

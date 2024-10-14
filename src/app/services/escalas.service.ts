@@ -11,11 +11,19 @@ export class EscalasService {
 
   constructor(private http: HttpClient) { }
 
+  findById(id: any): Observable<Escala> {
+    return this.http.get<Escala>(`${API_CONFIG.baseUrl}/escalas/${id}`);
+  }
+
   findAll(): Observable<Escala[]> {
     return this.http.get<Escala[]>(`${API_CONFIG.baseUrl}/escalas`);
   }
 
   create(escala: Escala): Observable<Escala>{
     return this.http.post<Escala>(`${API_CONFIG.baseUrl}/escalas`, escala);
+  }
+
+  update(escala: Escala): Observable<Escala> {
+    return this.http.put<Escala>(`${API_CONFIG.baseUrl}/escalas/${escala.id}`, escala);
   }
 }
