@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { EquipeService } from 'src/app/services/equipe.service';
 import { PessoaService } from 'src/app/services/pessoa.service';
 import { EscalasService } from './../../../services/escalas.service';
@@ -49,18 +49,17 @@ export class EscalaCreateComponent implements OnInit {
 
   create(): void {
     const data = new Date(this.data.value);
-    // Formatar data como yyyy-MM-dd
     const formattedDate = `${data.getFullYear()}-${('0' + (data.getMonth() + 1)).slice(-2)}-${('0' + data.getDate()).slice(-2)}`;
-    this.escala.data = formattedDate; // Define a data formatada
-    this.escala.pessoasExtrasIds = this.pessoasExtrasIds.value; // Define pessoasExtrasIds
+    this.escala.data = formattedDate; 
+    this.escala.pessoasExtrasIds = this.pessoasExtrasIds.value; 
     this.escalasService.create(this.escala).subscribe({
         next: (resposta) => {
             this.toastService.success('Escala criada com sucesso', 'Nova escala');
             this.router.navigate(['escalas']);
         },
         error: (ex) => {
-            console.error('Erro ao criar escala:', ex); // Loga o erro completo para depuração
-            const errorMessage = ex?.error?.error || 'Ocorreu um erro desconhecido'; // Lida com o caso de ex.error ser null
+            console.error('Erro ao criar escala:', ex); 
+            const errorMessage = ex?.error?.error || 'Ocorreu um erro desconhecido'; 
             this.toastService.error(errorMessage);
         }
     });
