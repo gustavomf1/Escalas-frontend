@@ -15,6 +15,8 @@ import { EquipeDeleteComponent } from "./components/equipe/equipe-delete/equipe-
 import { EscalaListComponent } from "./components/escala/escala-list/escala-list.component";
 import { EscalaCreateComponent } from "./components/escala/escala-create/escala-create.component";
 import { EscalaUpdateComponent } from "./components/escala/escala-update/escala-update.component";
+import { EscalaReadComponent } from "./components/escala/escala-read/escala-read.component";
+import { ConfirmationDialogComponent } from "./components/confirmation-dialog/confirmation-dialog.component";
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent},
@@ -34,7 +36,9 @@ const routes: Routes = [
 
             {path: 'escalas', component: EscalaListComponent},
             {path: 'escalas/create', component: EscalaCreateComponent},
-            {path: 'escalas/update/:id', component: EscalaUpdateComponent}
+            {path: 'escalas/update/:id', component: EscalaUpdateComponent},
+            {path: 'escalas/read/:id', component: EscalaReadComponent},
+            {path: 'confirmation-dialog', component: ConfirmationDialogComponent}
         ]
     }
 ];

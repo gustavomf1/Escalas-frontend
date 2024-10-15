@@ -26,4 +26,8 @@ export class EscalasService {
   update(escala: Escala): Observable<Escala> {
     return this.http.put<Escala>(`${API_CONFIG.baseUrl}/escalas/${escala.id}`, escala);
   }
+
+  delete(id: any): Observable<Escala>{
+    return this.http.delete<Escala>(`${API_CONFIG.baseUrl}/escalas/${id}`);
+  }
 }

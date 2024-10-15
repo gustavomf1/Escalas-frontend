@@ -80,5 +80,9 @@ h1 {
 }
 
 .visibility{
+    color: #097925;
+}
+
+.delete{
     color: #790912;
 }

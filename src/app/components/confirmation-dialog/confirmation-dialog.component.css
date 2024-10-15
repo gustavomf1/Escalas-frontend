@@ -1,0 +1,19 @@
+.custom-dialog-container {
+    background-color: #f9f9f9;
+    color: #333; 
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .custom-dialog-header {
+    font-size: 20px; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+  }
+  
+  .custom-dialog-footer {
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 20px; 
+  }
+  

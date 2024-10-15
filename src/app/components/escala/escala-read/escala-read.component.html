@@ -1,0 +1,44 @@
+<div class="container mat-elevation-z8">
+    <h1 class="full-width">Vizualizando a Escala</h1>
+    <img class="full-width" src="assets/img/chamado-create.svg" alt="image">
+
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Titulo</mat-label>
+            <input [disabled]="true" [(ngModel)]="escala.titulo" name="titulo" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Data</mat-label>
+            <input [disabled]="true" [(ngModel)]="escala.data" name="data" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error>
+                A data é obrigatória.
+            </mat-error>
+        </mat-form-field>
+
+        <div class="selecao">
+            <mat-form-field appearance="outline">
+                <mat-label>Selecione uma equipe</mat-label>
+                <mat-select [disabled]="true" [(ngModel)]="escala.equipe" name="equipe">
+                    <mat-option *ngFor="let equipe of equipes" [value]="equipe.id">{{ equipe.nome }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Pessoas Extras</mat-label>
+                <mat-select [disabled]="true" [(ngModel)]="escala.pessoasExtrasIds" name="pessoasExtrasIds" multiple>
+                    <mat-option *ngFor="let pessoa of pessoas" [value]="pessoa.id">{{ pessoa.nome }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Descrição</mat-label>
+            <textarea [disabled]="true" class="descricao" [(ngModel)]="escala.descricao" name="descricao" matInput></textarea>
+        </mat-form-field>
+
+        <button routerLink="../../" class="full-width mat-elevation-z8" mat-stroked-button color="primary">Voltar</button>
+    </form>
+</div>

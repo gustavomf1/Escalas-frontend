@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog'; // Adicione esta linha
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -43,7 +44,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common'; // Importando para registrar a locale
 import localePt from '@angular/common/locales/pt'; // Importando locale pt-BR
 import { LOCALE_ID } from '@angular/core';
-import { EscalaUpdateComponent } from './components/escala/escala-update/escala-update.component'; // Importando LOCALE_ID para configuração
+import { EscalaUpdateComponent } from './components/escala/escala-update/escala-update.component';
+import { EscalaReadComponent } from './components/escala/escala-read/escala-read.component';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component'; // Importando LOCALE_ID para configuração
 
 @NgModule({
   declarations: [
@@ -62,11 +65,14 @@ import { EscalaUpdateComponent } from './components/escala/escala-update/escala-
     EquipeDeleteComponent,
     EscalaListComponent,
     EscalaCreateComponent,
-    EscalaUpdateComponent
+    EscalaUpdateComponent,
+    EscalaReadComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
     MatButtonModule,
+    MatDialogModule, // Adicione esta linha
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
