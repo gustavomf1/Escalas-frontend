@@ -7,7 +7,6 @@ Este é um projeto de frontend desenvolvido usando Angular, HTML, CSS, Node.js, 
 - **Angular**: Framework para desenvolvimento de aplicações web.
 - **HTML**: Linguagem de marcação para estruturar as páginas web.
 - **CSS**: Linguagem de estilo para personalizar o visual das páginas.
-- **Node.js**: Ambiente de execução para JavaScript no backend.
 - **TypeScript**: Linguagem de programação que estende o JavaScript, adicionando tipos estáticos.
 - **Angular Material**: Biblioteca de componentes UI para Angular.
 
