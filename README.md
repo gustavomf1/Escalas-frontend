@@ -1,27 +1,50 @@
-# Helpdesk
+# Projeto Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+## Descrição
+Este é um projeto de frontend desenvolvido usando Angular, HTML, CSS, Node.js, TypeScript e Angular Material. O objetivo do projeto é gerenciar pessoas, equipes e escalas de trabalho de forma eficiente e intuitiva.
 
-## Development server
+## Tecnologias Utilizadas
+- **Angular**: Framework para desenvolvimento de aplicações web.
+- **HTML**: Linguagem de marcação para estruturar as páginas web.
+- **CSS**: Linguagem de estilo para personalizar o visual das páginas.
+- **Node.js**: Ambiente de execução para JavaScript no backend.
+- **TypeScript**: Linguagem de programação que estende o JavaScript, adicionando tipos estáticos.
+- **Angular Material**: Biblioteca de componentes UI para Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Principais Componentes
 
-## Code scaffolding
+### 1. **Pessoa**
+- Gerencia as pessoas que podem ser escaladas.
+- Funcionalidades: listar, adicionar, editar e deletar pessoas.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 2. **Equipe**
+- Gerencia equipes que podem ser atribuídas a escalas.
+- Funcionalidades: listar, adicionar, editar e deletar equipes.
 
-## Build
+### 3. **Escala**
+- Gerencia as escalas de trabalho.
+- Funcionalidades: listar, adicionar, editar e deletar escalas, atribuindo pessoas e equipes.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Instalação
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/gustavomf1/Escalas-frontend.git
+   ```
+2. Navegue até o diretório do projeto:
+    ```bash
+    cd seu-repositorio
+    ```
+3. Instale as dependências:
+    ```bash
+    npm install
+    ```
+4. Inicie o servidor de desenvolvimento:
+    ```bash
+    ng serve
+    ```
+5. Abra o navegador e acesse [http://localhost:4200](http://localhost:4200).
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Uso
+- Para gerenciar pessoas, navegue até a seção **Pessoa**.
+- Para gerenciar equipes, navegue até a seção **Equipe**.
+- Para gerenciar escalas, navegue até a seção **Escala**.
