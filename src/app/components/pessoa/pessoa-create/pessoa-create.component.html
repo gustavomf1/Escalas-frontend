@@ -10,7 +10,7 @@
     </section>
 
     <p>
-      <mat-form-field class="fullwidth" appearance="fill">
+      <mat-form-field class="fullwidth" appearance="outline">
         <mat-label>Nome</mat-label>
         <input [(ngModel)]="pessoa.nome" name="nome" [formControl]="nome" required matInput
           placeholder="Ex. Roberto Silva" maxlength="50">
@@ -19,7 +19,7 @@
     </p>
 
     <p>
-      <mat-form-field class="fullwidth" appearance="fill">
+      <mat-form-field class="fullwidth" appearance="outline">
         <mat-label>CPF</mat-label>
         <input [(ngModel)]="pessoa.cpf" name="cpf" [formControl]="cpf" required matInput
           placeholder="Ex. 000.000.000-00" mask="000.000.000-00">
@@ -28,16 +28,16 @@
     </p>
 
     <p>
-      <mat-form-field class="fullwidth" appearance="fill">
-        <mat-label>Equipe</mat-label>
-        <input [(ngModel)]="pessoa.idEquipe" name="idEquipe" [formControl]="idEquipe" matInput
-          placeholder="Ex. 1">
-        <mat-icon matSuffix>pin</mat-icon>
+      <mat-form-field class="fullwidth" appearance="outline">
+        <mat-label>Selecione uma equipe</mat-label>
+        <mat-select [(ngModel)]="pessoa.idEquipe" name="idEquipe" [formControl]="idEquipe">
+          <mat-option *ngFor="let equipe of equipes" [value]="equipe.id">{{ equipe.nome }}</mat-option>
+        </mat-select>
       </mat-form-field>
     </p>
 
     <p>
-      <mat-form-field class="fullwidth" appearance="fill">
+      <mat-form-field class="fullwidth" appearance="outline">
         <mat-label>E-mail</mat-label>
         <input [(ngModel)]="pessoa.email" name="email" [formControl]="email" required matInput
           placeholder="Ex. roberto@gmail.com">
@@ -46,7 +46,7 @@
     </p>
 
     <p>
-      <mat-form-field class="fullwidth" appearance="fill">
+      <mat-form-field class="fullwidth" appearance="outline">
         <mat-label>Senha</mat-label>
         <input [(ngModel)]="pessoa.senha" name="senha" [formControl]="senha" required type="password" matInput
           placeholder="Ex. 1234">

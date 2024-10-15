@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Equipe } from 'src/app/models/equipe';
 import { Pessoa } from 'src/app/models/pessoa';
+import { EquipeService } from 'src/app/services/equipe.service';
 import { PessoaService } from 'src/app/services/pessoa.service';
 
 @Component({
@@ -24,6 +26,8 @@ export class PessoaCreateComponent implements OnInit {
     escalasExtras: null
   }
 
+  equipes: Equipe[] = [];
+
   nome: FormControl = new FormControl(null, Validators.minLength(3));
   cpf: FormControl = new FormControl(null, Validators.required);
   email: FormControl = new FormControl(null, Validators.email);
@@ -32,11 +36,13 @@ export class PessoaCreateComponent implements OnInit {
 
   constructor(
     private service: PessoaService,
+    private equipeService: EquipeService,
     private toast: ToastrService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.findAllEquipe();
   }
 
   validaCampos(): boolean {
@@ -49,9 +55,7 @@ export class PessoaCreateComponent implements OnInit {
       this.toast.error('Por favor, preencha todos os campos corretamente.', 'Erro');
       return;
     }
-
-    // Prepara o ID da equipe para ser enviado
-    this.pessoa.idEquipe = this.idEquipe.value; // Supondo que você só tenha o ID da equipe
+    this.pessoa.idEquipe = this.idEquipe.value; 
 
     this.service.create(this.pessoa).subscribe(() => {
       this.toast.success('Pessoa cadastrada com sucesso', 'Cadastro');
@@ -64,6 +68,12 @@ export class PessoaCreateComponent implements OnInit {
       }else{
         this.toast.error(ex.error.message);
       }
+    });
+  }
+
+  findAllEquipe(): void {
+    this.equipeService.findAll().subscribe(resposta => {
+      this.equipes = resposta;
     });
   }
 
